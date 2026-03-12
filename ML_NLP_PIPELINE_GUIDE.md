@@ -69,21 +69,21 @@ This is a **production-ready email spam classifier** that demonstrates a complet
 │ STAGE 1: DATA COLLECTION                                        │
 ├─────────────────────────────────────────────────────────────────┤
 │ Source: Kaggle SMS Spam Collection Dataset                      │
-│ Total Emails: 5,572 (747 spam, 4,825 legitimate)               │
+│ Total Emails: 5,572 (747 spam, 4,825 legitimate)                │
 │ Format: CSV (spam.csv)                                          │
-│ Spam Ratio: 13.4%                                              │
+│ Spam Ratio: 13.4%                                               │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 2: DATA PREPROCESSING & NLP                               │
 ├─────────────────────────────────────────────────────────────────┤
-│ Operations:                                                      │
+│ Operations:                                                     │
 │ ├─ Convert to lowercase                                         │
 │ ├─ Remove extra whitespace                                      │
-│ ├─ Tokenization (split into words)                             │
-│ └─ Normalization (standardize format)                          │
+│ ├─ Tokenization (split into words)                              │
+│ └─ Normalization (standardize format)                           │
 │                                                                 │
-│ Output: Clean, normalized text ready for features              │
+│ Output: Clean, normalized text ready for features               │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
@@ -91,90 +91,90 @@ This is a **production-ready email spam classifier** that demonstrates a complet
 ├─────────────────────────────────────────────────────────────────┤
 │ Method: TF-IDF Vectorization                                    │
 │ Features: 100 (top features by importance)                      │
-│ N-grams: Unigrams and Bigrams (1-2 word combinations)          │
-│ Max DF: 0.95 (ignore words in >95% of documents)              │
-│ Min DF: 1 (include words appearing once)                       │
+│ N-grams: Unigrams and Bigrams (1-2 word combinations)           │
+│ Max DF: 0.95 (ignore words in >95% of documents)                │
+│ Min DF: 1 (include words appearing once)                        │
 │                                                                 │
-│ Output: 100-dimensional feature vectors for each email         │
+│ Output: 100-dimensional feature vectors for each email          │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 4: TRAIN-TEST SPLIT                                       │
 ├─────────────────────────────────────────────────────────────────┤
-│ Strategy: Stratified Random Split                              │
-│ Training Set: 70% (3,900 emails)                               │
-│ Testing Set: 30% (1,672 emails)                                │
-│ Random State: 42 (reproducible results)                        │
-│ Balance: Both sets maintain 13.4% spam ratio                   │
+│ Strategy: Stratified Random Split                               │
+│ Training Set: 70% (3,900 emails)                                │
+│ Testing Set: 30% (1,672 emails)                                 │
+│ Random State: 42 (reproducible results)                         │
+│ Balance: Both sets maintain 13.4% spam ratio                    │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 5: MODEL TRAINING                                         │
 ├─────────────────────────────────────────────────────────────────┤
 │ Models Trained:                                                 │
-│ ├─ Naive Bayes (baseline)                                      │
-│ ├─ Random Forest (100 trees)                                   │
-│ ├─ Gradient Boosting (100 estimators)                          │
-│ └─ SVM - Linear (selected as best)                             │
+│ ├─ Naive Bayes (baseline)                                       │
+│ ├─ Random Forest (100 trees)                                    │
+│ ├─ Gradient Boosting (100 estimators)                           │
+│ └─ SVM - Linear (selected as best)                              │
 │                                                                 │
-│ Cross-Validation: 5-fold CV on training data                   │
-│ Best Model: SVM (F1-Score: 83.1%)                             │
+│ Cross-Validation: 5-fold CV on training data                    │
+│ Best Model: SVM (F1-Score: 83.1%)                               │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 6: MODEL EVALUATION & COMPARISON                          │
 ├─────────────────────────────────────────────────────────────────┤
 │ Metrics:                                                        │
-│ ├─ Accuracy: 75% (overall correct predictions)                 │
-│ ├─ Precision: 66.7% (of predicted spam, how many correct)      │
-│ ├─ Recall: 100% (of actual spam, how many caught)             │
-│ └─ F1-Score: 80% (balanced metric)                            │
+│ ├─ Accuracy: 75% (overall correct predictions)                  │
+│ ├─ Precision: 66.7% (of predicted spam, how many correct)       │
+│ ├─ Recall: 100% (of actual spam, how many caught)               │
+│ └─ F1-Score: 80% (balanced metric)                              │
 │                                                                 │
-│ Confusion Matrix:                                              │
-│ ├─ True Positives: 4 (correctly identified spam)              │
-│ ├─ True Negatives: 2 (correctly identified legitimate)        │
-│ ├─ False Positives: 2 (legitimate marked as spam)             │
-│ └─ False Negatives: 0 (spam missed)                           │
+│ Confusion Matrix:                                               │
+│ ├─ True Positives: 4 (correctly identified spam)                │
+│ ├─ True Negatives: 2 (correctly identified legitimate)          │
+│ ├─ False Positives: 2 (legitimate marked as spam)               │
+│ └─ False Negatives: 0 (spam missed)                             │
 │                                                                 │
-│ Model Comparison:                                              │
-│ ├─ Naive Bayes: 75% accuracy                                  │
-│ ├─ Random Forest: 75% accuracy, 100% precision                │
-│ ├─ Gradient Boosting: 62.5% accuracy, 100% recall            │
-│ └─ SVM: 75% accuracy, 80% F1-Score ← SELECTED                │
+│ Model Comparison:                                               │
+│ ├─ Naive Bayes: 75% accuracy                                    │
+│ ├─ Random Forest: 75% accuracy, 100% precision                  │
+│ ├─ Gradient Boosting: 62.5% accuracy, 100% recall               │
+│ └─ SVM: 75% accuracy, 80% F1-Score ← SELECTED                   │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 7: REAL-WORLD PREDICTIONS                                 │
 ├─────────────────────────────────────────────────────────────────┤
-│ Prediction Function: predict_email(email_text)                 │
-│ Output: (prediction, confidence_score)                         │
+│ Prediction Function: predict_email(email_text)                  │
+│ Output: (prediction, confidence_score)                          │
 │                                                                 │
 │ Example Predictions:                                            │
-│ ├─ "Click to win money!!!" → SPAM (95% confidence)           │
-│ ├─ "Meeting tomorrow at 3pm" → LEGITIMATE (95% confidence)    │
-│ └─ "Free vacation won!" → SPAM (95% confidence)               │
+│ ├─ "Click to win money!!!" → SPAM (95% confidence)              │
+│ ├─ "Meeting tomorrow at 3pm" → LEGITIMATE (95% confidence)      │
+│ └─ "Free vacation won!" → SPAM (95% confidence)                 │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ STAGE 8: MODEL PERSISTENCE & DEPLOYMENT                         │
 ├─────────────────────────────────────────────────────────────────┤
 │ Saved Files:                                                    │
-│ ├─ spam_classifier_model.pkl (trained SVM)                    │
-│ ├─ tfidf_vectorizer.pkl (text vectorizer)                     │
-│ ├─ model_metadata.json (performance metrics)                  │
-│ └─ deep_learning_model.h5 (optional LSTM)                     │
+│ ├─ spam_classifier_model.pkl (trained SVM)                      │
+│ ├─ tfidf_vectorizer.pkl (text vectorizer)                       │
+│ ├─ model_metadata.json (performance metrics)                    │
+│ └─ deep_learning_model.h5 (optional LSTM)                       │
 │                                                                 │
 │ Deployment Options:                                             │
-│ ├─ Flask REST API (flask_api.py)                              │
-│ ├─ Streamlit Web App (streamlit_dashboard.py)                 │
-│ ├─ Cloud Platforms (Heroku, AWS, GCP)                         │
-│ └─ Docker Containerization                                     │
+│ ├─ Flask REST API (flask_api.py)                                │
+│ ├─ Streamlit Web App (streamlit_dashboard.py)                   │
+│ ├─ Cloud Platforms (Heroku, AWS, GCP)                           │
+│ └─ Docker Containerization                                      │
 └─────────────────────────────────────────────────────────────────┘
                             ↓
 ┌─────────────────────────────────────────────────────────────────┐
 │ OUTPUT: Spam Classification with Confidence Score               │
 │                                                                 │
-│ Result: "SPAM" or "LEGITIMATE" + Confidence %                 │
+│ Result: "SPAM" or "LEGITIMATE" + Confidence %                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -287,8 +287,8 @@ spam_classifier/
 
 ## **PERFORMANCE METRICS EVOLUTION**
 
-| Version       | Data         | Models   | Accuracy | F1-Score | Production Ready |
-| ------------- | ------------ | -------- | -------- | -------- | ---------------- |
+| Version       | Data         | Models   | Accuracy | F1-Score | Production Ready  |
+| ------------- | ------------ | -------- | -------- | -------- | ----------------  |
 | **Basic**     | 20 emails    | 1 (NB)   | 50%      | 57%      | ❌               |
 | **Advanced**  | 20 emails    | 4        | 75%      | 80%      | ✅ Code          |
 | **Real Data** | 5,572 emails | 4        | 98%      | 96%      | ✅ + API         |
