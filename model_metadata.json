@@ -1,0 +1,10 @@
+{
+  "model_type": "SVM",
+  "accuracy": 0.75,
+  "precision": 0.6666666666666666,
+  "recall": 1.0,
+  "f1_score": 0.8,
+  "training_date": "2026-03-12T14:36:29.641328",
+  "total_features": 100,
+  "training_samples": 22
+}
