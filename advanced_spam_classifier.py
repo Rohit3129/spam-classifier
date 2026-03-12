@@ -1,30 +1,4 @@
-"""
-================================================================================
-ADVANCED EMAIL SPAM CLASSIFIER WITH MULTIPLE MODELS & VISUALIZATION
-================================================================================
 
-FEATURES:
-  ✓ Multiple ML algorithms (Naive Bayes, Random Forest, SVM, Gradient Boosting)
-  ✓ Model comparison & benchmarking
-  ✓ Visualization & charts
-  ✓ Flask REST API for deployment
-  ✓ Feature importance analysis
-  ✓ Cross-validation & hyperparameter tuning
-  ✓ Production-ready error handling
-  ✓ Model persistence (save/load)
-  ✓ Real-time prediction API
-  ✓ Performance metrics dashboard
-
-This is PRODUCTION-GRADE code ready for enterprise!
-
-Author: Your Name
-Date: 2025
-================================================================================
-"""
-
-# ============================================================================
-# IMPORTS
-# ============================================================================
 
 import pandas as pd
 import numpy as np
@@ -46,12 +20,12 @@ print("=" * 80)
 print("ADVANCED EMAIL SPAM CLASSIFIER - PRODUCTION READY")
 print("=" * 80)
 
-# ============================================================================
+
 # PHASE 1: DATA COLLECTION & PREPROCESSING
-# ============================================================================
+
 
 print("\n[PHASE 1] DATA COLLECTION & PREPROCESSING")
-print("-" * 80)
+
 
 # Enhanced dataset with more examples
 emails_data = {
@@ -108,12 +82,12 @@ def preprocess_text(text):
 
 df['email_cleaned'] = df['email'].apply(preprocess_text)
 
-# ============================================================================
+
 # PHASE 2: FEATURE ENGINEERING WITH ADVANCED TECHNIQUES
-# ============================================================================
+
 
 print("\n[PHASE 2] FEATURE ENGINEERING")
-print("-" * 80)
+
 
 # TF-IDF Vectorization with optimization
 tfidf = TfidfVectorizer(
@@ -134,12 +108,12 @@ feature_names = tfidf.get_feature_names_out()
 for i, name in enumerate(feature_names[:15]):
     print(f"   {i+1}. {name}")
 
-# ============================================================================
+
 # PHASE 3: TRAIN-TEST SPLIT WITH STRATIFICATION
-# ============================================================================
+
 
 print("\n[PHASE 3] TRAIN-TEST SPLIT")
-print("-" * 80)
+
 
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, 
@@ -153,12 +127,12 @@ print(f"✓ Testing set: {X_test.shape[0]} emails")
 print(f"✓ Training spam ratio: {y_train.sum() / len(y_train):.1%}")
 print(f"✓ Testing spam ratio: {y_test.sum() / len(y_test):.1%}")
 
-# ============================================================================
+
 # PHASE 4: TRAIN MULTIPLE MODELS
-# ============================================================================
+
 
 print("\n[PHASE 4] TRAINING MULTIPLE MODELS")
-print("-" * 80)
+
 
 models = {
     'Naive Bayes': MultinomialNB(),
@@ -183,9 +157,9 @@ for name, model in models.items():
     
     print(f"  ✓ Cross-validation F1: {cv_scores.mean():.3f} (+/- {cv_scores.std():.3f})")
 
-# ============================================================================
+
 # PHASE 5: MODEL EVALUATION & COMPARISON
-# ============================================================================
+
 
 print("\n[PHASE 5] MODEL EVALUATION & COMPARISON")
 print("-" * 80)
@@ -194,7 +168,7 @@ results = {}
 
 for name, model in trained_models.items():
     print(f"\n{name}:")
-    print("-" * 40)
+    
     
     # Predictions
     y_pred = model.predict(X_test)
@@ -226,9 +200,9 @@ for name, model in trained_models.items():
     print(f"  F1-Score:  {f1:.1%}")
     print(f"  CV Score:  {cross_val_scores[name].mean():.1%}")
 
-# ============================================================================
+
 # PHASE 6: FIND BEST MODEL
-# ============================================================================
+
 
 print("\n[PHASE 6] BEST MODEL SELECTION")
 print("-" * 80)
@@ -243,9 +217,8 @@ print(f"   Accuracy: {best_results['accuracy']:.1%}")
 print(f"   Precision: {best_results['precision']:.1%}")
 print(f"   Recall: {best_results['recall']:.1%}")
 
-# ============================================================================
 # PHASE 7: DETAILED ANALYSIS OF BEST MODEL
-# ============================================================================
+
 
 print("\n[PHASE 7] DETAILED ANALYSIS")
 print("-" * 80)
@@ -261,9 +234,9 @@ print("\nDetailed Classification Report:")
 print(classification_report(y_test, best_results['y_pred'], 
                           target_names=['Legitimate', 'Spam']))
 
-# ============================================================================
+
 # PHASE 8: FEATURE IMPORTANCE (for tree-based models)
-# ============================================================================
+
 
 print("\n[PHASE 8] FEATURE IMPORTANCE ANALYSIS")
 print("-" * 80)
@@ -281,9 +254,9 @@ elif best_model_name == 'Naive Bayes':
 else:
     print("Feature importance not available for this model type.")
 
-# ============================================================================
+
 # PHASE 9: REAL-WORLD PREDICTIONS
-# ============================================================================
+
 
 print("\n[PHASE 9] REAL-WORLD PREDICTIONS")
 print("-" * 80)
@@ -318,9 +291,9 @@ for email in test_emails:
     print(f"Email: \"{email}\"")
     print(f"Result: {label}{conf_str}\n")
 
-# ============================================================================
+
 # PHASE 10: MODEL PERSISTENCE
-# ============================================================================
+
 
 print("\n[PHASE 10] MODEL PERSISTENCE")
 print("-" * 80)
@@ -355,9 +328,9 @@ with open('model_metadata.json', 'w') as f:
 
 print("✓ Metadata saved to: model_metadata.json")
 
-# ============================================================================
+
 # PHASE 11: PRODUCTION FLASK API (CODE ONLY, REQUIRES FLASK INSTALLATION)
-# ============================================================================
+
 
 print("\n[PHASE 11] FLASK API CODE GENERATED")
 print("-" * 80)
@@ -436,9 +409,9 @@ print("  ✓ JSON request/response format")
 print("  ✓ Error handling")
 print("  ✓ Confidence scores")
 
-# ============================================================================
+
 # PHASE 12: SUMMARY & DEPLOYMENT READINESS
-# ============================================================================
+
 
 print("\n[PHASE 12] PRODUCTION DEPLOYMENT SUMMARY")
 print("=" * 80)

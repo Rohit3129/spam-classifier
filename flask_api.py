@@ -1,23 +1,4 @@
-"""
-================================================================================
-FLASK REST API FOR SPAM CLASSIFIER
-================================================================================
 
-This is a PRODUCTION-READY API for the spam classifier.
-
-Installation:
-    pip install flask
-
-Running:
-    python flask_api.py
-
-Testing:
-    curl -X POST http://localhost:5000/api/predict \
-      -H "Content-Type: application/json" \
-      -d '{"email": "Click here to win money!!!"}'
-
-================================================================================
-"""
 
 from flask import Flask, request, jsonify
 import pickle
@@ -26,9 +7,9 @@ import os
 from datetime import datetime
 import logging
 
-# ============================================================================
+
 # SETUP
-# ============================================================================
+
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
@@ -37,9 +18,9 @@ app.config['JSON_SORT_KEYS'] = False
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# ============================================================================
+
 # LOAD MODELS & METADATA
-# ============================================================================
+
 
 def load_models():
     """Load trained model and vectorizer"""
@@ -68,9 +49,9 @@ def load_models():
 # Load models at startup
 MODEL, VECTORIZER, METADATA = load_models()
 
-# ============================================================================
+
 # UTILITY FUNCTIONS
-# ============================================================================
+
 
 def preprocess_text(text):
     """Clean and preprocess email text"""
@@ -106,9 +87,9 @@ def get_prediction(email_text):
         'confidence': confidence
     }
 
-# ============================================================================
+
 # HEALTH CHECK
-# ============================================================================
+
 
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -120,9 +101,9 @@ def health_check():
         'model_loaded': MODEL is not None
     })
 
-# ============================================================================
+
 # PREDICTION ENDPOINT
-# ============================================================================
+
 
 @app.route('/api/predict', methods=['POST'])
 def predict():
@@ -181,9 +162,8 @@ def predict():
             'error': str(e)
         }), 500
 
-# ============================================================================
 # BATCH PREDICTION ENDPOINT
-# ============================================================================
+
 
 @app.route('/api/predict-batch', methods=['POST'])
 def predict_batch():
@@ -254,9 +234,9 @@ def predict_batch():
             'error': str(e)
         }), 500
 
-# ============================================================================
+
 # MODEL INFO ENDPOINT
-# ============================================================================
+
 
 @app.route('/api/model-info', methods=['GET'])
 def model_info():
@@ -280,9 +260,9 @@ def model_info():
         }
     }), 200
 
-# ============================================================================
+
 # STATS ENDPOINT
-# ============================================================================
+
 
 @app.route('/api/stats', methods=['GET'])
 def stats():
@@ -300,9 +280,8 @@ def stats():
         'timestamp': datetime.now().isoformat()
     }), 200
 
-# ============================================================================
 # ERROR HANDLERS
-# ============================================================================
+
 
 @app.errorhandler(404)
 def not_found(error):
@@ -328,9 +307,9 @@ def internal_error(error):
     """Handle 500 errors"""
     return jsonify({'error': 'Internal server error'}), 500
 
-# ============================================================================
+
 # MAIN
-# ============================================================================
+
 
 if __name__ == '__main__':
     if MODEL is None:

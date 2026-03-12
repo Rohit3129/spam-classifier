@@ -29,7 +29,7 @@ import os
 
 st.set_page_config(
     page_title="Email Spam Classifier",
-    page_icon="📧",
+    page_icon="",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -124,12 +124,12 @@ def predict_email(email_text):
 # ============================================================================
 
 # Header
-st.title("📧 Email Spam Classifier")
+st.title(" Email Spam Classifier")
 st.write("Intelligent email classification using Machine Learning")
 
 # Check if model is loaded
 if model is None:
-    st.error("⚠️ Models not loaded. Please run: `python advanced_spam_classifier.py`")
+    st.error(" Models not loaded. Please run: `python advanced_spam_classifier.py`")
     st.stop()
 
 # ============================================================================
@@ -139,12 +139,12 @@ if model is None:
 st.sidebar.title("🔧 Settings")
 page = st.sidebar.radio(
     "Choose a page:",
-    ["🏠 Home", "📨 Single Email", "📦 Batch Upload", "📊 Statistics", "ℹ️ About"]
+    [" Home", " Single Email", " Batch Upload", " Statistics", "ℹ About"]
 )
 
 # Model info in sidebar
 st.sidebar.markdown("---")
-st.sidebar.subheader("📈 Model Information")
+st.sidebar.subheader(" Model Information")
 if metadata:
     st.sidebar.metric("Accuracy", f"{metadata['accuracy']:.1%}")
     st.sidebar.metric("Precision", f"{metadata['precision']:.1%}")
@@ -165,19 +165,19 @@ if page == "🏠 Home":
         advanced machine learning algorithms.
         
         ### Features:
-        - ✅ Single email classification
-        - ✅ Batch upload (CSV files)
-        - ✅ Performance statistics
-        - ✅ Real-time predictions
+        -  Single email classification
+        -  Batch upload (CSV files)
+        -  Performance statistics
+        -  Real-time predictions
         
         ### Get Started:
-        1. Click **📨 Single Email** to classify one email
-        2. Or click **📦 Batch Upload** to classify many emails
-        3. View **📊 Statistics** for model performance
+        1. Click ** Single Email** to classify one email
+        2. Or click ** Batch Upload** to classify many emails
+        3. View ** Statistics** for model performance
         """)
     
     with col2:
-        st.subheader("How it works 🤖")
+        st.subheader("How it works ")
         st.markdown("""
         ```
         Email Text
@@ -210,7 +210,7 @@ if page == "🏠 Home":
 # PAGE 2: SINGLE EMAIL PREDICTION
 # ============================================================================
 
-elif page == "📨 Single Email":
+elif page == " Single Email":
     st.subheader("Classify a Single Email")
     
     # Email input
@@ -298,16 +298,16 @@ elif page == " Batch Upload":
             
             # Check if email column exists
             if 'email' not in df.columns:
-                st.error(f"❌ CSV must have 'email' column. Found columns: {list(df.columns)}")
+                st.error(f" CSV must have 'email' column. Found columns: {list(df.columns)}")
             else:
-                st.success(f"✅ Loaded {len(df)} emails")
+                st.success(f" Loaded {len(df)} emails")
                 
                 # Show preview
-                with st.expander("📋 Data Preview"):
+                with st.expander(" Data Preview"):
                     st.dataframe(df.head())
                 
                 # Classify all emails
-                if st.button("🚀 Classify All Emails"):
+                if st.button(" Classify All Emails"):
                     progress_bar = st.progress(0)
                     status_text = st.empty()
                     
@@ -350,7 +350,7 @@ elif page == " Batch Upload":
                     # Download button
                     csv = df.to_csv(index=False)
                     st.download_button(
-                        label="📥 Download Results as CSV",
+                        label=" Download Results as CSV",
                         data=csv,
                         file_name=f"spam_predictions_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv",
                         mime="text/csv",
@@ -364,7 +364,7 @@ elif page == " Batch Upload":
 # PAGE 4: STATISTICS
 # ============================================================================
 
-elif page == "📊 Statistics":
+elif page == " Statistics":
     st.subheader("Model Performance Statistics")
     
     if metadata:
@@ -413,7 +413,7 @@ elif page == "📊 Statistics":
         
         # Metrics explanation
         st.markdown("---")
-        st.subheader("📖 Metrics Explanation")
+        st.subheader(" Metrics Explanation")
         
         with st.expander("What do these metrics mean?"):
             st.markdown("""
@@ -432,14 +432,14 @@ elif page == "📊 Statistics":
 # PAGE 5: ABOUT
 # ============================================================================
 
-elif page == "ℹ️ About":
+elif page == "ℹ About":
     st.subheader("About This Application")
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.markdown("""
-        ### 🤖 How It Works
+        ###  How It Works
         
         This application uses **Machine Learning** to classify emails as SPAM 
         or LEGITIMATE.
@@ -450,7 +450,7 @@ elif page == "ℹ️ About":
         3. Machine Learning model makes a prediction
         4. Confidence score shows how sure the model is
         
-        ### 📊 Model Details
+        ###  Model Details
         
         - **Algorithm**: SVM (Support Vector Machine)
         - **Features**: TF-IDF with n-grams
@@ -460,7 +460,7 @@ elif page == "ℹ️ About":
     
     with col2:
         st.markdown("""
-        ### 🚀 Technology Stack
+        ###  Technology Stack
         
         - **Frontend**: Streamlit
         - **Backend**: Python, Scikit-learn
@@ -469,24 +469,24 @@ elif page == "ℹ️ About":
         
         ### ⚡ Features
         
-        - ✅ Single email classification
-        - ✅ Batch processing
-        - ✅ Real-time predictions
-        - ✅ Performance metrics
-        - ✅ CSV export
+        -  Single email classification
+        -  Batch processing
+        -  Real-time predictions
+        -  Performance metrics
+        -  CSV export
         
-        ### 📞 Support
+        ###  Support
         
         For issues or questions:
-        - GitHub: [Check project repository]
-        - Email: contact@example.com
+        - GitHub: [https://github.com/Rohit3129/spam-classifier.git]
+        - Email: rohitlamkhade301@.com
         """)
     
     st.markdown("---")
     st.markdown(
         """
         <div style="text-align: center; color: #888;">
-        <p>Built with ❤️ using Streamlit & Machine Learning</p>
+        <p>Built with LOVE :) using Streamlit & Machine Learning</p>
         <p>© 2025 Email Spam Classifier | All Rights Reserved</p>
         </div>
         """,
