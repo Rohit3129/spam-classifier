@@ -1,0 +1,20 @@
+
+Cc:/Users/Rohit3129/CascadeProjects/secure-data-storage/package.json¤{
+  "name": "secure-data-storage",
+  "version": "1.0.0",
+  "description": "Secure data storage smart contract",
+  "main": "truffle-config.js",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "@truffle/hdwallet-provider": "^2.1.0"
+  },
+  "devDependencies": {
+    "truffle": "^5.8.0"
+  },
+  "scripts": {
+    "test": "truffle test",
+    "compile": "truffle compile",
+    "migrate": "truffle migrate"
+  }
+}
+¤2Kfile:///c:/Users/Rohit3129/CascadeProjects/secure-data-storage/package.json

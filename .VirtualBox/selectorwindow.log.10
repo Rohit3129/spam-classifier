@@ -1,0 +1,22 @@
+00:00:00.560455 VirtualBox GUI VM Selector Window 7.1.6 r167084 win.amd64 (Jan 21 2025 14:13:52) release log
+00:00:00.560457 Log opened 2025-02-25T16:18:19.058661900Z
+00:00:00.560457 Build Type: release
+00:00:00.560460 OS Product: Windows 11
+00:00:00.560461 OS Release: 10.0.22631
+00:00:00.560461 OS Service Pack: 
+00:00:00.570244 DMI Product Name: 82XT
+00:00:00.574001 DMI Product Version: LOQ 15APH8
+00:00:00.574015 Firmware type: UEFI
+00:00:00.574376 Secure Boot: Disabled
+00:00:00.574381 Host RAM: 15554MB (15.1GB) total, 6768MB (6.6GB) available
+00:00:00.574384 Executable: C:\Program Files\Oracle\VirtualBox\VirtualBox.exe
+00:00:00.574384 Process ID: 17648
+00:00:00.574385 Package type: WINDOWS_64BITS_GENERIC
+00:00:00.574385 Windows Features:
+00:00:00.574385   Core Isolation (Memory Integrity): ENABLED
+00:00:00.574501 Qt version: 6.5.3
+00:00:00.574960 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:00.586946 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.586963 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:04.538932 GUI: UICommon: Handling aboutToQuit request..
+00:00:05.674546 GUI: UICommon: aboutToQuit request handled!

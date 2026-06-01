@@ -1,0 +1,64 @@
+00:00:00.004204 main     VirtualBox COM Server 7.1.6 r167084 win.amd64 (Jan 21 2025 14:13:52) release log
+00:00:00.004208 main     Log opened 2025-02-28T18:26:31.683382900Z
+00:00:00.004208 main     Build Type: release
+00:00:00.004214 main     OS Product: Windows 11
+00:00:00.004214 main     OS Release: 10.0.22631
+00:00:00.004215 main     OS Service Pack: 
+00:00:00.068754 main     DMI Product Name: 82XT
+00:00:00.080534 main     DMI Product Version: LOQ 15APH8
+00:00:00.080547 main     Firmware type: UEFI
+00:00:00.080932 main     Secure Boot: Disabled
+00:00:00.080956 main     Host RAM: 15554MB (15.1GB) total, 2713MB (2.6GB) available
+00:00:00.080965 main     Executable: C:\Program Files\Oracle\VirtualBox\VBoxSVC.exe
+00:00:00.080966 main     Process ID: 12104
+00:00:00.080966 main     Package type: WINDOWS_64BITS_GENERIC
+00:00:00.094328 main     Windows Features:
+00:00:00.094331 main       Core Isolation (Memory Integrity): ENABLED
+00:00:00.177880          VirtualBox: object creation starts
+00:00:00.178994          Home directory: 'C:\Users\Rohit3129\.VirtualBox'
+00:00:00.179388          Installed Drivers:
+00:00:00.181663            C:\Windows\system32\DRIVERS\VBoxNetLwf.sys (Version: 7.1.6.17084)
+00:00:00.182181            C:\Windows\System32\drivers\VBoxUSBMon.sys (Version: 7.1.6.17084)
+00:00:00.263747            C:\Windows\System32\drivers\VBoxSup.sys (Version: 7.1.6.17084)
+00:00:00.265055            C:\Windows\system32\DRIVERS\VBoxNetAdp6.sys (Version: 7.1.6.17084)
+00:00:00.294199          Loading settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.301639          usbLibGetDevices: Starting USB device enumeration
+00:00:00.312715          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#5&2141ba5c&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 3
+00:00:00.312802          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#ROOT_HUB30#5&2141ba5c&0&0#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 4
+00:00:00.312962          Getting USB descriptor (id 0) failed (dwErr=31) on hub USB#VID_05E3&PID_0610#6&3238ef5c&0&5#{f18a0e88-c30c-11d0-8815-00a0c906bed8} port 1
+00:00:00.378865          usbLibGetDevices: Found 4 USB devices, 0 captured
+00:00:00.392896          USB: Unknown USB device detected (idVendor: 0x0489, idProduct: 0xe0cd)
+00:00:00.393558          USB: Unknown USB device detected (idVendor: 0x048d, idProduct: 0xc986)
+00:00:00.394029          USB: Unknown USB device detected (idVendor: 0x5986, idProduct: 0x215f)
+00:00:00.529650          HostDnsMonitor: initializing
+00:00:00.537679          HostDnsMonitor: updating information
+00:00:00.538078          HostDnsMonitor: old information
+00:00:00.538079            no server entries
+00:00:00.538080            no domain set
+00:00:00.538080            no search string entries
+00:00:00.538080          HostDnsMonitor: new information
+00:00:00.538080            server 1: 194.168.4.100
+00:00:00.538081            server 2: 194.168.8.100
+00:00:00.538081            no domain set
+00:00:00.538081            no search string entries
+00:00:00.543021          VD: VDInit finished with VINF_SUCCESS
+00:00:00.548133          Platform architecture set to 'x86'
+00:00:00.702243          Loading settings file "C:\Users\Rohit3129\VirtualBox VMs\my-vm-portal_default_1740505348006_13045\my-vm-portal_default_1740505348006_13045.vbox" with version "1.19-windows"
+00:00:00.717405          Platform architecture set to 'x86'
+00:00:00.719438          VirtualBox: object created
+00:00:00.878102          Saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.881069          Finished saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml"
+00:00:00.881246          Saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.883417          Finished saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml"
+00:00:00.883562          Saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:00.885608          Finished saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml"
+00:00:01.790206          Saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:01.792733          Finished saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml"
+00:00:10.591633          Saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml" with version "1.12-windows"
+00:00:10.608235          Finished saving settings file "C:\Users\Rohit3129\.VirtualBox\VirtualBox.xml"
+00:01:20.835735 main     VirtualBox: object deletion starts
+00:01:20.836168 main     ERROR [COM]: aRC=VBOX_E_OBJECT_IN_USE (0x80bb000c) aIID={7d510820-a678-4730-a862-818dcd3fbed0} aComponent={MediumWrap} aText={Medium 'C:\Users\Rohit3129\VirtualBox VMs\my-vm-portal_default_1740505348006_13045\centos-7-1-1.x86_64.vmdk' cannot be closed because it is still attached to 1 virtual machines}, preserve=false aResultDetail=0
+00:01:20.840250 main     HostDnsMonitor: shutting down ...
+00:01:20.840351 main     HostDnsMonitor: shut down
+00:01:20.842429 Watcher  ERROR [COM]: aRC=E_ACCESSDENIED (0x80070005) aIID={d644ad1e-c501-4fc7-9ab6-aa6d763bc540} aComponent={VirtualBoxWrap} aText={The object is not ready}, preserve=false aResultDetail=0
+00:01:20.843095 main     VirtualBox: object deleted
